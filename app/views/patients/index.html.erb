@@ -1,0 +1,21 @@
+<p id="notice">  <%= notice %> </p>
+<h1> Patients </h1>
+<table>
+<% @patients.each do |patient| %>
+  <tr class="<%= cycle("list_line_odd", "list_line_even") %>">
+    <td class ="list_description">
+      <dl>
+        <dt><%= patient.name %></dt>
+        <dt><%= patient.phone %></dt>
+      </dl>
+    </td>
+    <td class="list_actions">
+      <%= link_to 'Show', patient %>
+      <%= link_to 'Edit', edit_patient_path(patient) %>
+      <%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr >
+<% end %>
+</table>
+<br/>
+<%= link_to 'New Patient', new_patient_path %>
