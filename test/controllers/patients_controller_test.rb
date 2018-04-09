@@ -3,6 +3,12 @@ require 'test_helper'
 class PatientsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @patient = patients(:one)
+    @update = {
+      name: 'Lorem Ipsum',
+      phone: '+97155555551',
+      email: 'example@examples.com',
+      address: '111 main st.'
+    }
   end
 
   test "should get index" do

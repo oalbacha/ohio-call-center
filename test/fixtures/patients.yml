@@ -11,3 +11,9 @@ two:
   phone: MyString
   email: MyString
   address: MyString
+
+omar:
+  name: Omar Albacha
+  phone: 0501006659
+  email: oalbacha@gmail.com
+  address: 1403 lakeshore tomer, JLT Dubai, UAE PO Box 119545
