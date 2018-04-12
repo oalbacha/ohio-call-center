@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OhioCallCenter</title>
+    <title>The Patient Call Center</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,7 +9,28 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="<%= controller.controller_name %>">
+    <% if user_signed_in? %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <div id="banner">
+        </div>
+        <div id="columns">
+          <div id="side">
+            <ul>
+              <li><a href="www....">Home</a></li>
+              <li><a href="www..../faq">Questions</a></li>
+              <li><a href="www..../news">News</a></li>
+              <li><a href="www..../contact">Contact</a></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </div>
+          <div id="main">
+            <%= yield %>
+          </div>
+        </div>
+        <% else %>
+        <%= yield %>
+      <% end %>
   </body>
 </html>
